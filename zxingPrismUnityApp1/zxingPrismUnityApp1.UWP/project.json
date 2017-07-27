@@ -7,6 +7,7 @@
     "Prism.Unity.Forms": "6.3.0",
     "Unity": "4.0.1",
     "Xamarin.Forms": "2.3.5.256-pre6",
+    "ZXing.Net.Mobile": "2.2.9",
     "ZXing.Net.Mobile.Forms": "2.2.9"
   },
   "frameworks": {

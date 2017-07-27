@@ -6,19 +6,29 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Views\NextPage.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Include="App.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\NextPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Prism.Core" Version="6.3.0" />
     <PackageReference Include="Prism.Forms" Version="6.3.0" />
     <PackageReference Include="Prism.Unity.Forms" Version="6.3.0" />
     <PackageReference Include="Unity" Version="4.0.1" />
     <PackageReference Include="Xamarin.Forms" Version="2.3.5.256-pre6" />
+    <PackageReference Include="ZXing.Net.Mobile" Version="2.2.9" />
+    <PackageReference Include="ZXing.Net.Mobile.Forms" Version="2.2.9" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,6 +37,9 @@
     </Compile>
     <Compile Update="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\NextPage.xaml.cs">
+      <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
 

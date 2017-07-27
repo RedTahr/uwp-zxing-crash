@@ -4,8 +4,24 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="zxingPrismUnityApp1.Views.MainPage"
+             xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"			 
              Title="MainPage">
   <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-    <Label Text="{Binding Title}" />
-  </StackLayout>
+		<Label Text="{Binding Title}" />
+		<Button Text="Next" Command="{Binding NextCommand}" />
+		<Button Text="activate ZXing" Command="{Binding ActivateZXingCommand}" />
+		<Grid  IsVisible="{Binding ZXingIsActive}" HeightRequest="120">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="1*" />
+				<ColumnDefinition Width="1*" />
+				<ColumnDefinition Width="1*" />
+			</Grid.ColumnDefinitions>
+			<zxing:ZXingScannerView x:Name="zxing" Grid.Column="1"
+									HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+										IsAnalyzing="{Binding ZXIsAnalyzing}"
+										IsScanning="{Binding ZXIsScanning}"
+										OnScanResult="zxing_OnScanResult"
+										/>
+		</Grid>
+	</StackLayout>
 </ContentPage>

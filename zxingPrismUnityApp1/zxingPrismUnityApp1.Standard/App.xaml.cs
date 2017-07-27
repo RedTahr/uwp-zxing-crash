@@ -1,6 +1,7 @@
 ﻿using Prism.Unity;
 using zxingPrismUnityApp1.Views;
 using Xamarin.Forms;
+using zxingPrismUnityApp1.ViewModels;
 
 namespace zxingPrismUnityApp1 {
 	public partial class App : PrismApplication {
@@ -14,7 +15,8 @@ namespace zxingPrismUnityApp1 {
 
 		protected override void RegisterTypes() {
 			Container.RegisterTypeForNavigation<NavigationPage>();
-			Container.RegisterTypeForNavigation<MainPage>();
+			Container.RegisterTypeForNavigation<MainPage, MainPageViewModel>();
+			Container.RegisterTypeForNavigation<NextPage, NextPageViewModel>();
 		}
 	}
 }
